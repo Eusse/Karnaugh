@@ -515,17 +515,22 @@ function QuineMcCluskeyDataCtrl() {
             var primTerm = new PrimTerm();
             primTerm.implicant = g[j];
 
+            var var_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
             // extract minTerm as string
             for (var thisVal in primTerm.implicant.imp) {
               var minTerm = "";
               var one = 1;
               var needed = (~primTerm.implicant.bitMask);
               for (var v = 0; v < this.noOfVars; v++) {
+                var current_var_name = var_names[v]
                 if ((needed & one) === one) {
                   if ((thisVal & one) === one) {
-                    minTerm = "<i>x</i><sub><small>" + v + "</small></sub>" + minTerm;
+                    //minTerm = "<i>x</i><sub><small>" + v + "</small></sub>" + minTerm;
+                    minTerm = "<i>"+current_var_name+"</i>" + minTerm
                   } else {
-                    minTerm = "<i>x&#772;</i><sub><small>" + v + "</small></sub>" + minTerm;
+                    //minTerm = "<i>x&#772;</i><sub><small>" + v + "</small></sub>" + minTerm;
+                    minTerm = "<i>"+current_var_name+"&#772;</i>" + minTerm
                   }
                 }
                 one = one << 1;

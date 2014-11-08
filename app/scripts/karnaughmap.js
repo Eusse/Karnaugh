@@ -627,7 +627,10 @@ function KarnaughMap(parentDivId, qmcRef) {
     var k = 0;
     while(k < data.noOfVars) {
       
-      overlays[k].innerHTML = "<i>x</i><sub><small>" + k + "</small></sub>"
+      var overlay_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+      var current_name = overlay_names[k];
+      overlays[k].innerHTML = '<i>'+current_name+'</i>';
+      //overlays[k].innerHTML = "<i>EU</i><sub><small>" + k + "</small></sub>"
       
       for (var x = 0; x < data.fieldPerLine; x++) {
         var bits = data.getKVFieldTruthmapID(x);
@@ -654,7 +657,9 @@ function KarnaughMap(parentDivId, qmcRef) {
       k++;
       if (k < data.noOfVars) {
         
-        overlays[k].innerHTML = "<i>x</i><sub><small>" + k + "</small></sub>";
+        var current_name = overlay_names[k];
+        overlays[k].innerHTML = '<i>'+current_name+'</i>';
+        //overlays[k].innerHTML = "<i>x</i><sub><small>" + k + "</small></sub>";
         
         labelNum = labelNum << 1; // move bit to left
 
@@ -719,7 +724,7 @@ function KarnaughMap(parentDivId, qmcRef) {
     var termY = data.fieldHeight * data.fieldLines + data.fieldBorder;
     var termStyle = resultStyle + 'max-width:' + data.fieldPerLine * data.fieldWidth + 'px;';
     overlays[data.noOfVars+1].setAttribute('style', termStyle);
-    overlays[data.noOfVars+1].innerHTML = "<span class='qmcMathFont'><i>y</i>&nbsp;=&nbsp;" + qmc.data.coloredMinimalTerm +"</span></p>"
+    overlays[data.noOfVars+1].innerHTML = "<span class='qmcMathFont'><i>F</i>&nbsp;=&nbsp;" + qmc.data.coloredMinimalTerm +"</span></p>"
   };
   
   function mouseOverElement(pos) {

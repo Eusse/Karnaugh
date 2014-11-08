@@ -21,3 +21,7 @@ function dontCareChanged() {
 $(document).ready(function(){
   run();
 });
+
+function showCredits(){
+  console.log();
+}
