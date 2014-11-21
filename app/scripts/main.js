@@ -22,6 +22,7 @@ $(document).ready(function(){
   run();
 });
 
-function showCredits(){
-  console.log();
+function dontCareChanged() {
+  var d = document.getElementById("select_dontCare").value;
+  karnaugh.allowDontCares(d);
 }

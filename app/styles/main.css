@@ -88,4 +88,8 @@ body {
   }
 }
 
+#logo{
+  height:80px;
+}
+
 .qmcMathFont{font-family:"Times New Roman",Georgia,Serif;}
